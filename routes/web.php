@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
+
+Route::prefix('book')->group(function(){
+  Route::get('/',[BookController::class,'index']);
+  Route::get('/add', [BookController::class, 'add']);
+  Route::get('/add', [BookController::class, 'create']);
+});
 
 Route::get('/', [AuthorController::class, 'index']);
 Route::get('/find', [AuthorController::class, 'find']);
@@ -13,3 +20,5 @@ Route::get('/edit', [AuthorController::class, 'edit']);
 Route::post('/edit', [AuthorController::class, 'update']);
 Route::get('/delete', [AuthorController::class, 'delete']);
 Route::post('/delete', [AuthorController::class, 'remove']);
+Route::get('/relation', [AuthorController::class, 'relate']);
+

@@ -67,4 +67,9 @@ class AuthorController extends Controller
         Author::find($request->id)->delete();
         return redirect('/');
     }
+    public function relate(Request $request)
+    {
+        $items = Author::all();
+        return view('author.index',['items' => $items]);
+    }
 }
