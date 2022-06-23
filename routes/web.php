@@ -21,4 +21,3 @@ Route::post('/edit', [AuthorController::class, 'update']);
 Route::get('/delete', [AuthorController::class, 'delete']);
 Route::post('/delete', [AuthorController::class, 'remove']);
 Route::get('/relation', [AuthorController::class, 'relate']);
-
